@@ -10,9 +10,9 @@ class BasicCache(BaseCaching):
     def put(self, key, item):
         """ assigns the new item to the dictionary
         """
-        if key is None or item is None:
-            pass
-        self.cache_data[key] = item
+        if not (key is None or item is None):
+            self.cache_data[key] = item
+
 
     def get(self, key):
         """ returns the value in self.cache_data linked to key
