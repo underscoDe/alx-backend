@@ -8,9 +8,16 @@ from flask import (
 from flask_babel import Babel
 
 
+class Config:
+    """ Config
+    """
+    LANGUAGES = ['en', 'fr']
+    DEFAULT_LOCALE = 'en'
+    DEFAULT_TIMEZONE = 'UTC'
+
+
 app = Flask(__name__)
 babel = Babel(app)
-Config = __import__('configs').Config
 
 
 app.config.from_object(Config)
